@@ -24,7 +24,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">データ登録</a>
+                    <a class="navbar-brand" href="index.php">トップに戻る</a>
                 </div>
             </div>
         </nav>

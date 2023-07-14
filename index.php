@@ -90,15 +90,17 @@ if ($status==false) {
 
 
     <!-- Main[Start] -->
-    <form method="POST" action="insert.php">
-        <div class="jumbotron">
+    <form method="post" action="insert.php">
+        <div class="dialoguefield">
             <fieldset>
-            <legend><h2>あなたの魂を震わせたセリフを入れてみよう！</h2></legend>
+                <legend><h2>あなたの魂を震わせたセリフを入れてみよう！</h2></legend>
                 <img src="img/anzai.png"><br>
-                <label>セリフ：<input type="text" name="name"></label><br>
-                <label>作者／著者名：<input type="text" name="email"></label><br>
-                <label>作品名：<input type="text" name="age"></label><br>
-                <label><textArea name="naiyou" rows="4" cols="40"></textArea></label><br>
+                <label>セリフ<br><textArea name="dialogue" rows="4" cols="50"></textArea></label><br>
+                <label>セリフの元画像（任意）<br><input type="file" name="img"></label><br>
+                <label>マンガのタイトル<br><input type="text" name="mangatitle" size="54"></label><br>
+                <label>作者名<br><input type="text" name="author"></label><br>
+                <label>出典・巻数<br><input type="text" name="source" size="24"></label><br>
+                <label>コメント<br><textArea name="comment" rows="2" cols="50"></textArea></label><br>
                 <input type="submit" value="送信">
             </fieldset>
         </div>

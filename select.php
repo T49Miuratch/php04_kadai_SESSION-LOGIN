@@ -24,7 +24,7 @@ if ($status == false) {
     while ($r = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $view .= '<p>';
         $view .= '<a href="detail.php?id=' . $r["id"] . '">';
-        $view .= h($r['id']) . " " . h($r['name']) . " " . h($r['email']);
+        $view .= h($r['dialogue']) . " " . h($r['author']) .  " " . h($r['source']) . " " . h($r['comment']) . " " . h($r['mangatitle']);
         $view .= '</a>';
         $view .= "　";
 

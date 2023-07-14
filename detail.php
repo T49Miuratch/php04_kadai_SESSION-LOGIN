@@ -55,15 +55,18 @@ if ($status == false) {
         <div class="jumbotron">
             <fieldset>
                 <legend>[編集]</legend>
-                <label>名前：<input type="text" name="name" value="<?= $row['name'] ?>"></label><br>
-                <label>Email：<input type="text" name="email" value="<?= $row['email'] ?>"></label><br>
-                <label>年齢：<input type="text" name="age" value="<?= $row['age'] ?>"></label><br>
-                <label><textArea name="naiyou" rows="4" cols="40"><?= $row['naiyou'] ?></textArea></label><br>
+                <label>セリフ<br><textArea name="dialogue" rows="4" cols="50"><?= $row['dialogue'] ?></textArea></label><br>
+                <label>セリフの元画像（任意）<br><input type="file" name="img"></label><br>
+                <label>マンガのタイトル<br><input type="text" name="mangatitle" size="54" value="<?= $row['mangatitle'] ?>"></label><br>
+                <label>作者名<br><input type="text" name="author" value="<?= $row['author'] ?>"></label><br>
+                <label>出典・巻数<br><input type="text" name="source" size="24" value="<?= $row['source'] ?>"></label><br>
+                <label>コメント<br><textArea name="comment" rows="2" cols="50"><?= $row['comment'] ?></textArea></label><br>
                 <input type="submit" value="送信">
                 <input type="hidden" name="id" value="<?= $id ?>">
             </fieldset>
         </div>
     </form>
+
     <!-- Main[End] -->
 
 
