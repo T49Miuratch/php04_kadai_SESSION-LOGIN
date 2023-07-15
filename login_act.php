@@ -34,7 +34,7 @@ if( $val['id'] != ''){
 
 $_SESSION['chk_ssid'] = session_id();
 $_SESSION['kanri_flg'] = $val['kanri_flg'];
-    header('Location: select.php');
+    header('Location: index.php');
 }else{
     //Login失敗時(Logout経由)
     header('Location: login.php');

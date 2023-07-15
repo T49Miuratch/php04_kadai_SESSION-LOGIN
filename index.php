@@ -1,22 +1,18 @@
 <?php
 
+session_start();
+
 // funcs.phpを読み込む
 require_once('funcs.php');
+loginCheck();
 
-//1.  DB接続します
-try {
-  //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=gs_db2;charset=utf8;host=localhost','root','');
-} catch (PDOException $e) {
-  exit('DBConnectError'.$e->getMessage());
-}
-
-//２．データ取得SQL作成
+//２．DB接続とデータ取得SQL作成
+$pdo = db_conn();
 $stmt = $pdo->prepare("SELECT * FROM manga_an_table2");
 $status = $stmt->execute();
 
 //３．データ表示
-$view="";
+$view = '';
 if ($status==false) {
     //execute（SQL実行時にエラーがある場合）
   $error = $stmt->errorInfo();
@@ -36,6 +32,8 @@ if ($status==false) {
 
     $view .= "<h5>" . h($result['date']) . "</h5>";//日付を小さく表示する
 
+    if ($_SESSION['kanri_flg'] === 1) {
+
     $view .= '<a href="detail.php?id='. $result['id'] .'">';
     $view .= '<button> 編 集 </button>';
     $view .= '</a>';
@@ -45,6 +43,8 @@ if ($status==false) {
     $view .= '<a href="delete.php?id='. $result['id'] .'">';
     $view .= '<button> 削 除 </button>';
     $view .= '</a>';
+
+  }
 
     $view .= "</p>";
 
